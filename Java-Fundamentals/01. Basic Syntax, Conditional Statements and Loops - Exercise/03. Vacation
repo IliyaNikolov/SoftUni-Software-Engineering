@@ -1,0 +1,76 @@
+package BasicSyntaxExercise;
+
+import java.util.Scanner;
+
+public class Vacation_03 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int peopleCount = Integer.parseInt(scanner.nextLine());
+        String groupType = scanner.nextLine();
+        String dayType = scanner.nextLine();
+
+        double studentPrice = 0;
+        double businessPrice = 0;
+        double regularPrice = 0;
+        double price = 0;
+
+        if (groupType.equals("Students")) {
+            if (dayType.equals("Friday")) {
+                studentPrice = peopleCount * 8.45;
+                price = 8.45;
+            } else if (dayType.equals("Saturday")) {
+                studentPrice = 9.80 * peopleCount;
+                price = 9.80;
+            } else if (dayType.equals("Sunday")) {
+                studentPrice = 10.46 * peopleCount;
+                price = 10.46;
+            }
+        } else if (groupType.equals("Business")) {
+            if (dayType.equals("Friday")) {
+                businessPrice = peopleCount * 10.90;
+                price = 10.90;
+            } else if (dayType.equals("Saturday")) {
+                businessPrice = peopleCount * 15.60;
+                price = 15.60;
+            } else if (dayType.equals("Sunday")) {
+                businessPrice = peopleCount * 16;
+                price = 16;
+            }
+        } else if (groupType.equals("Regular")) {
+            if (dayType.equals("Friday")) {
+                regularPrice = peopleCount * 15;
+                price = 15;
+            } else if (dayType.equals("Saturday")) {
+                regularPrice = peopleCount * 20;
+                price = 20;
+            } else if (dayType.equals("Sunday")) {
+                regularPrice = peopleCount * 22.50;
+                price = 22.50;
+            }
+        }
+        double totalPrice = studentPrice + businessPrice + regularPrice;
+        double discountPrice = 0;
+        double bigGroupPrice = 0;
+
+        if (peopleCount >= 100) {
+            bigGroupPrice = 10 * price;
+        }
+
+        if (peopleCount >= 30 && groupType.equals("Students")) {
+            discountPrice = totalPrice * 0.85;
+            System.out.printf("Total price: %.2f", discountPrice);
+            return;
+        } else if (peopleCount >= 100 && groupType.equals("Business")) {
+            discountPrice = totalPrice - bigGroupPrice;
+            System.out.printf("Total price: %.2f", discountPrice);
+            return;
+        } else if (peopleCount >= 10 && peopleCount <= 20 && groupType.equals("Regular")) {
+            discountPrice = totalPrice * 0.95;
+            System.out.printf("Total price: %.2f", discountPrice);
+            return;
+        }
+        System.out.printf("Total price: %.2f", totalPrice);
+    }
+}
+
