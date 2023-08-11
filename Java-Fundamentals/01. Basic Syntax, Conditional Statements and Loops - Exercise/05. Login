@@ -1,0 +1,33 @@
+package BasicSyntaxExercise;
+
+import java.util.Scanner;
+
+public class Login_05 {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String username = scanner.nextLine();
+        String inputPassword = scanner.nextLine();
+        String password = "";
+        int wrongPassword = 0;
+
+        for (int position = username.length() - 1; position >= 0; position--) {
+            char currentSymbol = username.charAt(position);
+            password += currentSymbol;
+        }
+
+        while (!inputPassword.equals(password)) {
+            System.out.println("Incorrect password. Try again.");
+            wrongPassword++;
+
+
+            if (wrongPassword == 3) {
+                System.out.printf("User %s blocked!%n", username);
+                return;
+            }
+            inputPassword = scanner.nextLine();
+        }
+        System.out.printf("User %s logged in.", username);
+    }
+}
