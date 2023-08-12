@@ -1,0 +1,29 @@
+package BasicSyntaxExercise;
+
+import java.util.Scanner;
+
+
+public class VendingMachine_07 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double totalCoinInserted = 0;
+        String command, command2;
+        double coins;
+        String product;
+        command = scanner.nextLine();
+
+        while (!command.equals("Start")){
+            coins = Double.parseDouble (scanner.nextLine());
+            totalCoinInserted += coins;
+            command2 = scanner.nextLine();
+                while (!command2.equals("End")){
+                    product = scanner.nextLine();
+
+
+                }
+        }
+        System.out.println(totalCoinInserted);
+
+    }
+}
