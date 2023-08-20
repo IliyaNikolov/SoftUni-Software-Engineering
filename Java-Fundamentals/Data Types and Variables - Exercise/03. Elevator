@@ -1,0 +1,22 @@
+package DataTypesExercise;
+
+import java.util.Scanner;
+
+public class Elevator_03 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int people = Integer.parseInt(scanner.nextLine());
+        int capacity = Integer.parseInt(scanner.nextLine());
+        int course1 = 0;
+
+        if(people < capacity) {
+            System.out.println(1);
+            return;
+        }else if (people % capacity > 0) {
+            course1 = 1;
+        }
+        int course2 = people / capacity;
+        System.out.println(course1 + course2);
+    }
+}
