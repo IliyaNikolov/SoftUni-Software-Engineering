@@ -1,0 +1,30 @@
+package DataTypesExercise;
+
+import java.util.Scanner;
+
+public class PokeMon_10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int pokePower = Integer.parseInt(scanner.nextLine());
+        int distance = Integer.parseInt(scanner.nextLine());
+        int exhaust = Integer.parseInt(scanner.nextLine());
+        int startPower = pokePower;
+        int targetCounter = 0;
+
+        while (pokePower >= distance) {
+            pokePower -= distance;
+            targetCounter++;
+            if (pokePower == startPower / 2) {
+                boolean isDividePossible = exhaust != 0;
+                if (isDividePossible) {
+                    pokePower = pokePower / exhaust;
+                }
+            }
+
+        }
+        System.out.println(pokePower);
+        System.out.println(targetCounter);
+
+    }
+}
