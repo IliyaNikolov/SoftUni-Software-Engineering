@@ -1,0 +1,24 @@
+package ArraysExercise;
+
+import java.util.Scanner;
+
+public class CommonElements_02 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] firstArr = scanner.nextLine().split(" ");
+        String[] secondArr = scanner.nextLine().split(" ");
+
+        for (int i = 0; i <= secondArr.length - 1; i++) {
+            String firstSymbol = secondArr[i];
+            for (int j = 0; j <= firstArr.length - 1; j++) {
+                String secondSymbol = firstArr[j];
+
+                if (secondSymbol.equals(firstSymbol)) {
+                    System.out.print(firstSymbol + " ");
+                }
+            }
+
+        }
+    }
+}
