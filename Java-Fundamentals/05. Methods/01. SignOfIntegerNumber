@@ -1,0 +1,27 @@
+package Methods;
+
+import java.util.Scanner;
+
+public class SignOfIntegerNumbers_01 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int num = Integer.parseInt(scanner.nextLine());
+        printNumbers(num);
+    }
+
+    public static void printNumbers(int num) {
+
+        String result = "";
+
+        if (num > 0) {
+            result = "positive";
+        } else if (num < 0) {
+            result = "negative";
+        } else {
+            result = "zero";
+        }
+        System.out.printf("The number %d is %s.", num, result);
+    }
+
+}
