@@ -1,0 +1,23 @@
+package Methods;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class MathPower_08 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double inputNumber = Double.parseDouble(scanner.nextLine());
+        double inputPower = Double.parseDouble(scanner.nextLine());
+        System.out.print(new DecimalFormat("0.####").format(powerNumber(inputNumber,inputPower)));
+    }
+
+    public static double powerNumber (double number, double power){
+        double total = 1;
+        for (int i = 1; i < power; i++) {
+            total = Math.pow(number,power);
+        }
+
+        return total;
+    }
+}
