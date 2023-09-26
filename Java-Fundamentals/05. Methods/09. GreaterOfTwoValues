@@ -1,0 +1,48 @@
+package Methods;
+
+import java.util.Scanner;
+
+public class GreaterOfTwoValues_09 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String command = scanner.nextLine();
+
+        if (command.equals("int")) {
+            int firstNumber = Integer.parseInt(scanner.nextLine());
+            int secondNumber = Integer.parseInt(scanner.nextLine());
+            System.out.println(greaterOfTwoInts(firstNumber, secondNumber));
+        } else if (command.equals("char")) {
+            char firstChar = scanner.nextLine().charAt(0);
+            char secondChar = scanner.nextLine().charAt(0);
+            greaterOfTwoChars(firstChar, secondChar);
+        } else if (command.equals("string")) {
+            String firstString = scanner.nextLine();
+            String secondString = scanner.nextLine();
+            System.out.println(greaterOfTwoString(firstString, secondString));
+        }
+    }
+
+    public static int greaterOfTwoInts(int firstNumber, int secondNumber) {
+
+        return Math.max(firstNumber, secondNumber);
+    }
+
+    public static char greaterOfTwoChars(char firstChar, char secondChar) {
+        if (firstChar < secondChar) {
+            System.out.println(secondChar);
+        } else {
+            System.out.println(firstChar);
+        }
+        return firstChar;
+    }
+
+    public static String greaterOfTwoString(String firstString, String secondString) {
+        if (firstString.compareTo(secondString) >= 0) {
+            return firstString;
+        } else {
+            return secondString;
+        }
+
+    }
+}
