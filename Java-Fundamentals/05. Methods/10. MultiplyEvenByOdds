@@ -1,0 +1,48 @@
+package Methods;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MultiplyEvenByOdds_10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int inputNumber = Math.abs(Integer.parseInt(scanner.nextLine()));
+
+        System.out.print(getMultipleOfEvensAndOdds(inputNumber));
+    }
+
+    public static int getMultipleOfEvensAndOdds(int number) {
+        int evenSum = getSumOfEvenNumbers(number);
+        int oddSum = getSumOfOddNumbers(number);
+        return evenSum * oddSum;
+    }
+
+    public static int getSumOfEvenNumbers(int number) {
+
+        String intToString = Integer.toString(number);
+        int[] array = Arrays.stream(intToString.split("")).mapToInt(Integer::parseInt).toArray();
+
+        int evenSum = 0;
+        for (int n : array) {
+            if (n % 2 == 0) {
+                evenSum += n;
+            }
+        }
+        return evenSum;
+    }
+
+    public static int getSumOfOddNumbers(int number) {
+
+        String intToString = Integer.toString(number);
+        int[] array = Arrays.stream(intToString.split("")).mapToInt(Integer::parseInt).toArray();
+
+        int oddSum = 0;
+        for (int n : array) {
+            if (n % 2 != 0) {
+                oddSum += n;
+            }
+        }
+        return oddSum;
+    }
+}
