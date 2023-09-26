@@ -1,0 +1,22 @@
+package Methods;
+
+import java.util.Scanner;
+
+public class RepeatString_07 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String inputString = scanner.nextLine();
+        int inputCount = Integer.parseInt(scanner.nextLine());
+        repeatString(inputString, inputCount);
+    }
+
+    private static String repeatString(String input, int count) {
+        String repeat = "";
+        for (int i = 0; i < count; i++) {
+            repeat += input;
+        }
+        System.out.println(repeat);
+        return repeat;
+    }
+}
