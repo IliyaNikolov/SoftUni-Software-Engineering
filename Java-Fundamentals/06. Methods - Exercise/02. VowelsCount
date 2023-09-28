@@ -1,0 +1,26 @@
+package MethodsExercise;
+
+
+import java.util.Scanner;
+
+public class VowelsCount_02 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //a, e, i, o, u.
+        String input = scanner.nextLine().toLowerCase();
+        vowelsCount(input);
+    }
+
+    public static String vowelsCount(String input) {
+        String[] arr = input.split("");
+        int count = 0;
+        for (String element : arr) {
+            if (element.equals("a") || element.equals("e") || element.equals("i") || element.equals("o") || element.equals("u")) {
+                count++;
+            }
+
+        }
+        System.out.println(count);
+        return input;
+    }
+}
