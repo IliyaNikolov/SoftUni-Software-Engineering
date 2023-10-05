@@ -1,0 +1,25 @@
+package MethodsExercise;
+
+import java.util.Scanner;
+
+public class AddAndSubtract_05 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int firstNumber = Integer.parseInt(scanner.nextLine());
+        int secondNumber = Integer.parseInt(scanner.nextLine());
+        int thirdNumber = Integer.parseInt(scanner.nextLine());
+
+
+        System.out.println(sumOfFirstTwo(firstNumber, secondNumber) - subtractWithLast(thirdNumber));
+    }
+
+    public static int sumOfFirstTwo(int firstNumber, int secondNumber) {
+
+        return firstNumber + secondNumber;
+    }
+
+    public static int subtractWithLast(int thirdNumber) {
+        return thirdNumber;
+    }
+}
