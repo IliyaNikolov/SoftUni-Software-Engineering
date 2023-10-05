@@ -1,0 +1,31 @@
+package MethodsExercise;
+
+import java.util.Scanner;
+
+public class MiddleCharacters_06 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+
+        printMiddleChar(input);
+    }
+
+    public static void printMiddleChar(String input) {
+        int inputLength = input.length();
+
+        if (inputLength % 2 != 0) {
+            int middleIndex = inputLength / 2;
+            char middleChar = input.charAt(middleIndex);
+            System.out.println(middleChar);
+        } else {
+            int middleIndex1 = inputLength / 2 - 1;
+            int middleIndex2 = inputLength / 2;
+            System.out.print(input.charAt(middleIndex1));
+            System.out.print(input.charAt(middleIndex2));
+        }
+
+
+    }
+}
+
