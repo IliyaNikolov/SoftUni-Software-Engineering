@@ -1,0 +1,48 @@
+package MethodsExercise;
+
+import java.util.Scanner;
+
+public class TopNumber_10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int inputNumber = Integer.parseInt(scanner.nextLine());
+
+        for (int number = 8; number <= inputNumber; number++) {
+
+            boolean isValidSumDigits = topNumber(number);
+            if (isValidSumDigits) {
+                boolean isContainsOddDigit = oddDigit(number);
+                if (isContainsOddDigit) {
+
+                    System.out.println(number);
+                }
+            }
+        }
+    }
+
+    public static boolean topNumber(int number) {
+        int sum = 0;
+
+        while (number > 0) {
+
+            int digit = number % 10;
+            sum += digit;
+            number /= 10;
+        }
+        return sum % 8 == 0;
+    }
+
+    public static boolean oddDigit(int number) {
+
+        while (number > 0) {
+            int digit = number % 10;
+            if (digit % 2 != 0) {
+                return true;
+            }
+            number /= 10;
+        }
+        return false;
+    }
+}
+
