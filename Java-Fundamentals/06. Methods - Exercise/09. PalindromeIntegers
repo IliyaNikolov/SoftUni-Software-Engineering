@@ -1,0 +1,36 @@
+package MethodsExercise;
+
+import java.util.Scanner;
+
+public class PalindromeIntegers_09 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+
+
+        while (!input.equals("END")) {
+            isItPalindrome(input);
+            if (isItPalindrome(input)) {
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+            }
+            input = scanner.nextLine();
+        }
+
+
+    }
+
+    public static boolean isItPalindrome(String input) {
+        boolean isItValid = false;
+        char firstDigit = input.charAt(0);
+        char secondDigit = input.charAt(input.length() - 1);
+
+        if (firstDigit == secondDigit) {
+            isItValid = true;
+        }
+
+        return isItValid;
+    }
+}
