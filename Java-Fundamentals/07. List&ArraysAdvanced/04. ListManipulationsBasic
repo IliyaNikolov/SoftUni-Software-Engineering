@@ -1,0 +1,51 @@
+package List;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class ListManipulationBasics_04 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        List<Integer> numbersList = Arrays.stream(scanner.nextLine()
+                        .split(" "))
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+
+
+        while (true) {
+            String command = scanner.nextLine();
+            String[] commandLines = command.split(" ");
+
+            if ((command.equals("end"))) {
+                break;
+            }
+            switch (commandLines[0]) {
+                case "Add":
+                    int numberToAdd = Integer.parseInt(commandLines[1]);
+                    numbersList.add(numberToAdd);
+                    break;
+                case "Remove":
+                    int numberToRemove = Integer.parseInt(commandLines[1]);
+                    numbersList.remove(Integer.valueOf(numberToRemove));
+                    break;
+                case "RemoveAt":
+                    int indexToRemove = Integer.parseInt(commandLines[1]);
+                    numbersList.remove(indexToRemove);
+                    break;
+                case "Insert":
+                    int numberToInsert = Integer.parseInt(commandLines[1]);
+                    int indexToInsert = Integer.parseInt(commandLines[2]);
+                    numbersList.add(indexToInsert, numberToInsert);
+                    break;
+            }
+
+
+        }
+        System.out.println(numbersList.toString().replaceAll("[\\[\\],]", ""));
+    }
+
+
+}
